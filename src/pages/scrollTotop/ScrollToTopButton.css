@@ -7,8 +7,8 @@
   color: white;
   border: none;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   font-size: 20px;
   cursor: pointer;
   z-index: 1000;
@@ -60,8 +60,11 @@
     background: linear-gradient(135deg, #23df29, #2f2e7d);
 
 }
+
+
+
 @media (max-width: 768px) {
-  .social-iconsscroll {
-    display: none;
+  .scroll-to-top {
+    bottom: 90px;
   }
 }

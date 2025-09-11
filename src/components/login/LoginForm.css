@@ -119,12 +119,16 @@
 
 @media (max-width: 480px) {
 
+    .login-overlay {
+        padding: 2vh;
+    }
+
     /* For mobile devices */
     .login-popup {
         margin-top: 20vh;
         padding: 10px;
         width: 100%;
-        max-width: 450px;
+        max-width: 450px !important;
     }
 
     .login-popup-title {

@@ -1,6 +1,6 @@
-.top-scroll-indicator {
+/* .top-scroll-indicator {
   position: fixed;
- top: 70px;
+ top: 100px;
   left: 0;
   width: 100%;
   height: 4px;
@@ -12,4 +12,4 @@
   height: 100%;
   background-color: #151616;
   transition: width 0.1s ease-out;
-}
+} */

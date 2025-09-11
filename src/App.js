@@ -9,7 +9,7 @@ import CaseStudies from "./pages/whoweare/casestudies/CaseStudies";
 import AwardsAndEvents from "./pages/whoweare/awardsAndevents/AwardsAndEvents";
 import Products from "./pages/products/Products";
 import ContactUs from "./pages/contactus/ContactUs";
-import ScrollTotopcomponents from "./components/ScrollTotopcomponents";
+// import ScrollTotopcomponents from "./components/ScrollTotopcomponents";
 import ChatBot from "./components/chatbot/ChatBot";
 import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy";
 import Faqs from "./components/faqs/Faqs";
@@ -29,7 +29,7 @@ function App() {
   
   return (
     <HashRouter>
-      <ScrollTotopcomponents />
+      {/* <ScrollTotopcomponents /> */}
       <Header />
 
       <Routes>
