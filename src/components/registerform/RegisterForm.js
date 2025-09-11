@@ -3,7 +3,9 @@ import { Button, Form, InputGroup, Row, Col } from 'react-bootstrap'; // Use Row
 import { FaUser, FaEnvelope, FaPhone, FaBuilding, FaLock } from 'react-icons/fa'; // FontAwesome icons
 import { motion } from 'framer-motion'; // For animation
 import './RegisterForm.css';
+import { toast
 
+ } from 'react-toastify';
 const RegisterForm = ({ closeForm,toggleForm }) => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -19,11 +21,49 @@ const RegisterForm = ({ closeForm,toggleForm }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    closeForm(); // Close the form after submission
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Form Data Submitted:', formData);
+  //   closeForm(); 
+  // };
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    FIRST_NAME: formData.firstName,
+    LAST_NAME: formData.lastName,
+    EMAIL: formData.email,
+    PASSWORD: formData.password,
+    PHONE_NUMBER: formData.mobile,
+    COMPANY: formData.company,
+    STATUS: 'N',
+    CREATED_BY: 'system',
+    MODIFIED_BY: 'system'
   };
+
+  try {
+    // const response = await fetch('http://localhost:5000/register', {
+    const response = await fetch('http://192.168.137.1:5000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+
+    if (response.status === 201) {
+      toast.success(`${formData.firstName} Registration Successfully !`);
+      closeForm();
+    } else {
+      toast.error(`❌ ${result.message}`);
+    }
+  } catch (err) {
+    console.error('Registration error:', err);
+    toast.error('Something went wrong. Please try again.');
+  }
+};
 
   const handleOverlayClick = (e) => {
     // Close the form if clicked outside the popup

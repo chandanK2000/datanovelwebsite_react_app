@@ -74,10 +74,10 @@ const MegaMenuSolutions = ({ closeMenus }) => {
                 Cyber Security
               </Link>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/identity-access-management" onClick={closeMenus}>Identity & Access Management</Link></li>
-                <li><Link className="dropdown-item" to="/data-privacy-security" onClick={closeMenus}>Data Privacy & Security</Link></li>
+                <li><Link className="dropdown-item" to="/identity-access-management" onClick={closeMenus}>Identity & Access <br/>Management</Link></li>
+                <li><Link className="dropdown-item" to="/data-privacy-security" onClick={closeMenus}>Data Privacy & <br/>Security</Link></li>
                 <li><Link className="dropdown-item" to="/application-security" onClick={closeMenus}>Application Security</Link></li>
-                <li><Link className="dropdown-item" to="/risk-compliance" onClick={closeMenus}>Risk & Compliance Management</Link></li>
+                <li><Link className="dropdown-item" to="/risk-compliance" onClick={closeMenus}>Risk & Compliance <br/>Management</Link></li>
               </ul>
             </li>
 

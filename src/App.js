@@ -20,35 +20,52 @@ import DataEngineerings from "./pages/solutions/dataEngineerings/DataEngineering
 import CaseStudyDetail from "./pages/whoweare/casestudies/CaseStudyDetail";
 // import LoginForm from "./components/login/LoginForm";
 // import RegisterForm from "./components/registerform/RegisterForm";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import VideoAnalaytics from "./pages/solutionPage/videoanalaytics/VideoAnalaytics";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  
   return (
     <HashRouter>
-      <ScrollTotopcomponents/>
-      <Header/>
+      <ScrollTotopcomponents />
+      <Header />
 
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/dataQuality" element={<DataQuality/>}/>
-        <Route exact path="/data-architecture" element={<DataArchitecture/>}/>
-        <Route exact path="/data-engineering" element={<DataEngineerings/>}/>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/dataQuality" element={<DataQuality />} />
+        <Route exact path="/data-architecture" element={<DataArchitecture />} />
+        <Route exact path="/data-engineering" element={<DataEngineerings />} />
 
-        <Route exact path="/casestudies" element={<CaseStudies/>}/>
-        <Route exact path="/awardsandevents" element={<AwardsAndEvents/>}/>
-        <Route exact path="/products" element={<Products/>}/>
-        <Route exact path="/contactus" element={<ContactUs/>}/>
-        <Route exact path="/privacypolicy" element={<PrivacyPolicy/>}/>
-        <Route exact path="/faqs" element={<Faqs/>}/>
-        <Route exact path="/aboutus" element={<AboutUs/>}/>
-        <Route exact path="/blogs" element={<Blogs/>}/>
-        <Route exact path="/casestudy/:id" element={<CaseStudyDetail/>}/>
-        {/* <Route exact path="/register" element={<RegisterForm/>}/>
-        <Route exact path="/login" element={<LoginForm/>}/> */}
+        <Route exact path="/casestudies" element={<CaseStudies />} />
+        <Route exact path="/awardsandevents" element={<AwardsAndEvents />} />
+        <Route exact path="/products" element={<Products />} />
+        <Route exact path="/contactus" element={<ContactUs />} />
+        <Route exact path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route exact path="/faqs" element={<Faqs />} />
+        <Route exact path="/aboutus" element={<AboutUs />} />
+        <Route exact path="/blogs" element={<Blogs />} />
+        <Route exact path="/casestudy/:id" element={<CaseStudyDetail />} />
+        {/* <Route exact path="/videoAnalaytics" element={<VideoAnalaytics/>}/> */}
+        <Route
+          exact
+          path="/videoAnalaytics"
+          element={
+            <ProtectedRoute>
+              <VideoAnalaytics />
+            </ProtectedRoute>
+          }
+        />
+
+
 
       </Routes>
-      <Footer/>
-      <ScrollToTopButton/>
-      <ChatBot/>
+      <Footer />
+      <ScrollToTopButton />
+      <ChatBot />
+      <ToastContainer position="top-right" autoClose={3000} />
+
     </HashRouter>
   );
 }

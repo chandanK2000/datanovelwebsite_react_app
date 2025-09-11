@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Form, InputGroup } from 'react-bootstrap'; // Importing necessary components
-import { FaEnvelope, FaLock, FaSignInAlt } from 'react-icons/fa'; // Icons for email and password
-import { motion } from 'framer-motion'; // For animation
-import './LoginForm.css'; // Make sure to add corresponding CSS
+import { Button, Form, InputGroup } from 'react-bootstrap'; 
+import { FaEnvelope, FaLock, FaSignInAlt } from 'react-icons/fa'; 
+import { motion } from 'framer-motion'; 
+import './LoginForm.css'; 
+import { toast } from 'react-toastify';
 
 const LoginForm = ({ closeForm, toggleForm }) => {
     const [formData, setFormData] = useState({
@@ -18,11 +19,49 @@ const LoginForm = ({ closeForm, toggleForm }) => {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Login Data Submitted:', formData);
-        closeForm(); // Close the form after submission
-    };
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log('Login Data Submitted:', formData);
+    //     closeForm(); // Close the form after submission
+    // };
+
+    const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    EMAIL: formData.email,
+    PASSWORD: formData.password,
+  };
+
+  try {
+    const response = await fetch('http://192.168.137.1:5000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+
+    if (response.status === 200) {
+      toast.success('🎉 Login successful!');
+        localStorage.setItem('loggedInUser', JSON.stringify(result.user));
+
+
+      // You can store user data in localStorage or context here if needed
+      // localStorage.setItem('user', JSON.stringify(result.user));
+
+      closeForm(); // Close login popup
+        window.location.reload(); // simplest approach
+
+    } else {
+      toast.error(`❌ ${result.message}`);
+    }
+  } catch (error) {
+    console.error('Login error:', error);
+    toast.error('Something went wrong. Please try again.');
+  }
+};
+
 
     const handleOverlayClick = (e) => {
         // If the click is outside of the login-popup, close the form

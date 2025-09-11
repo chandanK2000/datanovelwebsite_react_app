@@ -34,6 +34,20 @@
   transition: border-bottom 0.8s ease-in;
 }
 
+/* Add spacing between hamburger and username */
+.navbar-toggler {
+  margin-right: 0.5rem;
+}
+
+/* Hide hamburger-adjacent username on large devices */
+@media (min-width: 992px) {
+  .d-lg-none .text-primary {
+    display: none !important;
+  }
+}
+
+
+
 /* Make collapse slide in from left */
 @media (max-width: 768px) {
   .navbar-collapse {

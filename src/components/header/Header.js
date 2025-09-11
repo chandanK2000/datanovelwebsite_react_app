@@ -6,27 +6,26 @@ import MegaMenuWhoWeAre from '../MegaMenu/megawhoweAre/MegaMenuWhoWeAre';
 import { Link, useNavigate } from 'react-router-dom';
 import RegisterForm from '../registerform/RegisterForm';
 import LoginForm from '../login/LoginForm';
+import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Header = () => {
   const navigate = useNavigate();
   const sidebarRef = useRef(null);
 
-  // 🔸 Close sidebar when clicking outside (on small devices)
+  // Close dropdowns and sidebar logic
   useEffect(() => {
     const clearDropdowns = () => {
       document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
         menu.classList.remove('show');
       });
-
       document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(toggle => {
         toggle.setAttribute('aria-expanded', 'false');
       });
     };
 
-    // Close dropdowns on initial load
     clearDropdowns();
 
-    // Close dropdowns on resize
     const handleResize = () => clearDropdowns();
     window.addEventListener('resize', handleResize);
 
@@ -39,7 +38,6 @@ const Header = () => {
       const toggler = document.querySelector('.navbar-toggler');
       const nav = document.getElementById('mainNav');
 
-      // If sidebar is open, and click is outside the sidebar AND not on the toggler
       if (
         sidebar &&
         nav &&
@@ -48,11 +46,9 @@ const Header = () => {
       ) {
         sidebar.classList.remove('show');
 
-        // Also close dropdowns if any
         document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
           menu.classList.remove('show');
         });
-
         document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(toggle => {
           toggle.setAttribute('aria-expanded', 'false');
         });
@@ -65,31 +61,53 @@ const Header = () => {
     };
   }, []);
 
-  // 🔸 Helper to close mega menus + sidebar
   const closeMenus = () => {
-    // Close dropdown menus
     document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
       menu.classList.remove('show');
     });
 
-    // Reset aria-expanded
     document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(toggle => {
       toggle.setAttribute('aria-expanded', 'false');
     });
 
-    // Close mobile sidebar
     const sidebar = document.querySelector('.navbar-collapse');
     if (sidebar && sidebar.classList.contains('show')) {
       sidebar.classList.remove('show');
     }
   };
 
-  // Navigate to the Contact Us page
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    const userData = localStorage.getItem('loggedInUser');
+    if (userData) {
+      setLoggedInUser(JSON.parse(userData));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You will be logged out of your account.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, logout',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem('loggedInUser');
+        setLoggedInUser(null);
+        toast.success('🚪 Logged out successfully');
+        window.location.reload();
+      }
+    });
+  };
+
   const Contactus = () => {
     navigate('/contactus');
     closeMenus();
-
-    // Wait a little so the page loads before scrolling
     setTimeout(() => {
       window.scrollTo({
         top: 300,
@@ -98,60 +116,67 @@ const Header = () => {
     }, 200);
   };
 
-  // const navigate = useNavigate();
-  const [isLoginOpen, setIsLoginOpen] = useState(false); // Controls Login Form visibility
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false); // Controls Register Form visibility
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-  // Handle toggle between Login and Register form
   const toggleLoginForm = () => {
-    setIsLoginOpen(!isLoginOpen);  // Toggle Login Form visibility
-    setIsRegisterOpen(false);  // Close Register Form
+    setIsLoginOpen(!isLoginOpen);
+    setIsRegisterOpen(false);
   };
 
   const toggleRegisterForm = () => {
-    setIsRegisterOpen(!isRegisterOpen);  // Toggle Register Form visibility
-    setIsLoginOpen(false);  // Close Login Form
+    setIsRegisterOpen(!isRegisterOpen);
+    setIsLoginOpen(false);
   };
 
-  // Toggle between RegisterForm and LoginForm
   const toggleForm = () => {
-    setIsLoginOpen(!isLoginOpen);  // Toggle LoginForm visibility
-    setIsRegisterOpen(false);  // Hide RegisterForm
+    setIsLoginOpen(!isLoginOpen);
+    setIsRegisterOpen(false);
   };
 
-  // Show RegisterForm and hide LoginForm
   const RegisterClick = () => {
-    setIsRegisterOpen(true);  // Show RegisterForm
-    setIsLoginOpen(false);  // Hide LoginForm
+    setIsRegisterOpen(true);
+    setIsLoginOpen(false);
   };
 
   return (
     <div className="header-container fixed-top">
       <nav className="navbar navbar-expand-lg">
-        <div className="container">
+        <div className="container d-flex align-items-center justify-content-between">
+
           {/* Brand */}
           <a className="navbar-brand d-flex align-items-center" href="#">
             <img src={logo} alt="Company Logo" height="50" width="80" />
             <span className="ms-2 fw-bold">DatanovelTech</span>
           </a>
 
-          {/* Mobile toggler */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav"
-            aria-controls="mainNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          {/* Hamburger + Username on small devices */}
+          <div className="d-lg-none d-flex align-items-center">
 
-          {/* Nav links */}
+                {loggedInUser && (
+              <span className="text-primary fw-bold">
+                👋 {loggedInUser.FIRST_NAME}
+              </span>
+            )}
+
+            <button
+              className="navbar-toggler me-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+
+        
+          </div>
+
+          {/* Sidebar / Main Nav */}
           <div className="collapse navbar-collapse" id="mainNav" ref={sidebarRef}>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              {/* Solutions Dropdown */}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -166,7 +191,6 @@ const Header = () => {
                 <MegaMenuSolutions closeMenus={closeMenus} />
               </li>
 
-              {/* Who We Are Dropdown */}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -181,7 +205,6 @@ const Header = () => {
                 <MegaMenuWhoWeAre closeMenus={closeMenus} />
               </li>
 
-              {/* Solutions Dropdown */}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -197,39 +220,50 @@ const Header = () => {
                   <li><a className="dropdown-item" href="#" onClick={closeMenus}>Data Quality</a></li>
                   <li><a className="dropdown-item" href="#" onClick={closeMenus}>Data Migration</a></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#" onClick={closeMenus}>Video Analytics</a></li>
+                  <li><Link className="dropdown-item" to='/videoAnalaytics' onClick={closeMenus}>Video Analytics</Link></li>
                 </ul>
               </li>
 
-              {/* Blogs - Single Link */}
               <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/blogs"
-                  onClick={closeMenus}
-                >
-                  Blogs
-                </Link>
+                <Link className="nav-link" to="/blogs" onClick={closeMenus}>Blogs</Link>
               </li>
 
-              {/* Contact Us / Register */}
+              {/* Username for large devices */}
+              {loggedInUser && (
+                <li className="nav-item d-none d-lg-flex align-items-center">
+                  <span className="text-primary fw-bold px-2">
+                    👋 {loggedInUser.FIRST_NAME}
+                  </span>
+                </li>
+              )}
+
+              {/* Register/Login Buttons */}
+              {!loggedInUser && (
+                <>
+                  <li>
+                    <button className='register_button' onClick={RegisterClick}>Register Now</button>
+                  </li>
+                  <li>
+                    <button className='register_button' onClick={toggleForm}>Login</button>
+                  </li>
+                </>
+              )}
+
+            
+
               <li className="nav-item">
                 <button className='register_button' onClick={Contactus}>Contact Us</button>
               </li>
-
-              <li>
-                <button className='register_button' onClick={RegisterClick}>Register Now</button>
-              </li>
-              <li>
-                <button className='register_button' onClick={toggleForm}>Login</button>
-
-              </li>
-
+                {loggedInUser && (
+                <li>
+                  <button className='register_button' onClick={handleLogout}>Logout</button>
+                </li>
+              )}
             </ul>
-            {/* Conditionally render the RegisterForm or LoginForm based on the states */}
+
+            {/* Register and Login Forms */}
             {isRegisterOpen && <RegisterForm closeForm={() => setIsRegisterOpen(false)} toggleForm={toggleLoginForm} />}
             {isLoginOpen && <LoginForm closeForm={() => setIsLoginOpen(false)} toggleForm={toggleRegisterForm} />}
-
           </div>
         </div>
       </nav>
