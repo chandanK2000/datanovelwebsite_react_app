@@ -24,6 +24,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import VideoAnalaytics from "./pages/solutionPage/videoanalaytics/VideoAnalaytics";
 import ProtectedRoute from "./components/ProtectedRoute";
+// import EmailVerifiedSuccess from "./components/EmailVerifiedSuccess";
 
 function App() {
   
@@ -48,6 +49,8 @@ function App() {
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/casestudy/:id" element={<CaseStudyDetail />} />
         {/* <Route exact path="/videoAnalaytics" element={<VideoAnalaytics/>}/> */}
+        {/* <Route  exact path="/email-verified-success" element={<EmailVerifiedSuccess />} /> */}
+
         <Route
           exact
           path="/videoAnalaytics"

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Form, InputGroup } from 'react-bootstrap'; 
-import { FaEnvelope, FaLock, FaSignInAlt } from 'react-icons/fa'; 
-import { motion } from 'framer-motion'; 
-import './LoginForm.css'; 
+import { Button, Form, InputGroup } from 'react-bootstrap';
+import { FaEnvelope, FaLock, FaSignInAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import './LoginForm.css';
 import { toast } from 'react-toastify';
 
 const LoginForm = ({ closeForm, toggleForm }) => {
@@ -18,49 +18,44 @@ const LoginForm = ({ closeForm, toggleForm }) => {
         setFormData({ ...formData, [name]: value });
     };
 
-    // Handle form submission
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log('Login Data Submitted:', formData);
-    //     closeForm(); // Close the form after submission
-    // };
+
 
     const handleSubmit = async (e) => {
-  e.preventDefault();
+        e.preventDefault();
 
-  const payload = {
-    EMAIL: formData.email,
-    PASSWORD: formData.password,
-  };
+        const payload = {
+            EMAIL: formData.email,
+            PASSWORD: formData.password,
+        };
 
-  try {
-    const response = await fetch('http://192.168.137.1:5000/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+        try {
+            const response = await fetch('http://172.16.49.117:5000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
 
-    const result = await response.json();
+            const result = await response.json();
 
-    if (response.status === 200) {
-      toast.success('🎉 Login successful!');
-        localStorage.setItem('loggedInUser', JSON.stringify(result.user));
+            if (response.status === 200) {
+                toast.success('🎉 Login successful!');
+                localStorage.setItem('loggedInUser', JSON.stringify(result.user));
 
 
-      // You can store user data in localStorage or context here if needed
-      // localStorage.setItem('user', JSON.stringify(result.user));
+                // You can store user data in localStorage or context here if needed
+                // localStorage.setItem('user', JSON.stringify(result.user));
 
-      closeForm(); // Close login popup
-        window.location.reload(); // simplest approach
+                closeForm(); // Close login popup
+                window.location.reload(); // simplest approach
 
-    } else {
-      toast.error(`❌ ${result.message}`);
-    }
-  } catch (error) {
-    console.error('Login error:', error);
-    toast.error('Something went wrong. Please try again.');
-  }
-};
+            } else {
+                toast.error(`❌ ${result.message}`);
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            toast.error('Something went wrong. Please try again.');
+        }
+    };
 
 
     const handleOverlayClick = (e) => {
@@ -113,20 +108,6 @@ const LoginForm = ({ closeForm, toggleForm }) => {
                             />
                         </InputGroup>
                     </Form.Group>
-
-                    {/* <Form.Group controlId="formMobile">
-            <Form.Label>Mobile</Form.Label>
-            <InputGroup>
-              <InputGroup.Text><FaMobileAlt /></InputGroup.Text>
-              <Form.Control
-                type="text"
-                name="mobile"
-                value={formData.mobile}
-                onChange={handleInputChange}
-                required
-              />
-            </InputGroup>
-          </Form.Group> */}
 
                     <Form.Group className="login-submit-group mt-3 text-center">
                         <Button type="submit" className="login-submit-button">
