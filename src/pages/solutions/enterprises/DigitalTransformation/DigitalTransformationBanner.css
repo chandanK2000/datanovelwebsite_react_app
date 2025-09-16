@@ -1,0 +1,107 @@
+.digital-banner {
+    background-image: url('data:image/jpeg;base64,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');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.banner-content h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+.banner-content h3 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.banner-button {
+    background-color: #4CAF4F;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Responsive for tablets */
+@media (max-width: 1024px) {
+    .digital-banner {
+        padding: 80px 15px;
+    }
+
+    .banner-content h2 {
+        font-size: 28px;
+    }
+
+    .banner-content h3 {
+        font-size: 18px;
+    }
+
+    .banner-button {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+}
+
+/* Responsive for mobile phones */
+@media (max-width: 768px) {
+    .digital-banner {
+        padding: 60px 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-content h2 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .banner-content h3 {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .banner-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        border-radius: 10px;
+    }
+}
+
+/* Extra small screens (very small phones) */
+@media (max-width: 480px) {
+    .digital-banner {
+        padding: 100px 0px 30px;
+        background-position: 0;
+
+    }
+
+    .banner-content h2 {
+        font-size: 18px;
+    }
+
+    .banner-content h3 {
+        font-size: 14px;
+    }
+
+    .banner-button {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+}

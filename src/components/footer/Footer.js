@@ -95,29 +95,41 @@ const Footer = () => {
 
         {/* Support Links */}
         <div className="footer-links">
-          <h4>Support</h4>
+          {/* <h4>Support</h4> */}
+          <h4>Services</h4>
           <ul>
-            <li><Link to="/faqs">Faq</Link></li>
-            {/* <li><a href="#">Terms of Service</a></li> */}
-            {/* <li><a href="#">Legal</a></li> */}
+            <li><Link to="/digital-transformation">Digital Transformation</Link></li>
+            <li><Link to="/application-development">application development</Link></li>
+            <li><Link to="/package-implementation">package implementation</Link></li>
+            <li><Link to="/cloud">cloud</Link></li>
+
             <li> <Link to="/privacypolicy">Privacy Policy</Link></li>
-            {/* <li><a href="#">Status</a></li> */}
           </ul>
         </div>
 
         {/* Subscribe Again with Send Icon */}
-        <div className="footer-subscribe">
-          <h4>Stay Up to Date</h4>
-          <form>
+        <div className="footer-links">
+          {/* <h4>Stay Up to Date</h4> */}
+          <h4>Solutions</h4>
+          <ul>
+            <li><Link to="/data-quality">Data Quality</Link></li>
+            <li><Link to="/data-migration">Data Migration</Link></li>
+            <li><Link to="/video-analaytics"> Video Analaytics</Link></li>
+
+          </ul>
+          {/* <form>
             <div className="subscribe-input-wrapper">
               <input type="email" placeholder="Your email address" required />
               <button type="submit" aria-label="Send">
                 <FaPaperPlane className='faplane' />
               </button>
             </div>
-          </form>
+          </form> */}
+        
         </div>
+        
       </div>
+    
     </footer>
   );
 };

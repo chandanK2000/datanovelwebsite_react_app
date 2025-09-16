@@ -20,8 +20,19 @@ const RegisterForm = ({ closeForm, toggleForm }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+
+  const validateMobile = (mobile) => {
+    const regex = /^[6-9]\d{9}$/;
+    return regex.test(mobile);
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateMobile(formData.mobile)) {
+      toast.error('⚠️ Invalid mobile number! It should start with 6,7,8 or 9 and be 10 digits long.');
+      return;
+    }
 
     const payload = {
       FIRST_NAME: formData.firstName,
@@ -169,6 +180,8 @@ const RegisterForm = ({ closeForm, toggleForm }) => {
                     value={formData.mobile}
                     onChange={handleInputChange}
                     required
+                    maxLength={10}
+
                   />
                 </InputGroup>
               </Form.Group>

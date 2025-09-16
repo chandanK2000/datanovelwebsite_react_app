@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Header.css';
 import logo from '../../assets/images/companyLogo.png';
 import MegaMenuSolutions from '../MegaMenu/megamenuSolutions/MegaMenuSolutions';
 import MegaMenuWhoWeAre from '../MegaMenu/megawhoweAre/MegaMenuWhoWeAre';
 import { Link, useNavigate } from 'react-router-dom';
-import RegisterForm from '../registerform/RegisterForm';
-import LoginForm from '../login/LoginForm';
-import { toast } from 'react-toastify';
-import Swal from 'sweetalert2';
+// import RegisterForm from '../registerform/RegisterForm';
+// import LoginForm from '../login/LoginForm';
+// import { toast } from 'react-toastify';
+// import Swal from 'sweetalert2';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -76,34 +76,34 @@ const Header = () => {
     }
   };
 
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  // const [loggedInUser, setLoggedInUser] = useState(null);
 
-  useEffect(() => {
-    const userData = localStorage.getItem('loggedInUser');
-    if (userData) {
-      setLoggedInUser(JSON.parse(userData));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const userData = localStorage.getItem('loggedInUser');
+  //   if (userData) {
+  //     setLoggedInUser(JSON.parse(userData));
+  //   }
+  // }, []);
 
-  const handleLogout = () => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You will be logged out of your account.",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, logout',
-      cancelButtonText: 'Cancel'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        localStorage.removeItem('loggedInUser');
-        setLoggedInUser(null);
-        toast.success('🚪 Logged out successfully');
-        window.location.reload();
-      }
-    });
-  };
+  // const handleLogout = () => {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     text: "You will be logged out of your account.",
+  //     icon: 'warning',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085d6',
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonText: 'Yes, logout',
+  //     cancelButtonText: 'Cancel'
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       localStorage.removeItem('loggedInUser');
+  //       setLoggedInUser(null);
+  //       toast.success('🚪 Logged out successfully');
+  //       window.location.reload();
+  //     }
+  //   });
+  // };
 
   const Contactus = () => {
     navigate('/contactus');
@@ -116,28 +116,28 @@ const Header = () => {
     }, 200);
   };
 
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  // const [isLoginOpen, setIsLoginOpen] = useState(false);
+  // const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-  const toggleLoginForm = () => {
-    setIsLoginOpen(!isLoginOpen);
-    setIsRegisterOpen(false);
-  };
+  // const toggleLoginForm = () => {
+  //   setIsLoginOpen(!isLoginOpen);
+  //   setIsRegisterOpen(false);
+  // };
 
-  const toggleRegisterForm = () => {
-    setIsRegisterOpen(!isRegisterOpen);
-    setIsLoginOpen(false);
-  };
+  // const toggleRegisterForm = () => {
+  //   setIsRegisterOpen(!isRegisterOpen);
+  //   setIsLoginOpen(false);
+  // };
 
-  const toggleForm = () => {
-    setIsLoginOpen(!isLoginOpen);
-    setIsRegisterOpen(false);
-  };
+  // const toggleForm = () => {
+  //   setIsLoginOpen(!isLoginOpen);
+  //   setIsRegisterOpen(false);
+  // };
 
-  const RegisterClick = () => {
-    setIsRegisterOpen(true);
-    setIsLoginOpen(false);
-  };
+  // const RegisterClick = () => {
+  //   setIsRegisterOpen(true);
+  //   setIsLoginOpen(false);
+  // };
 
   return (
     <div className="header-container fixed-top">
@@ -153,11 +153,11 @@ const Header = () => {
           {/* Hamburger + Username on small devices */}
           <div className="d-lg-none d-flex align-items-center">
 
-                {loggedInUser && (
+                {/* {loggedInUser && (
               <span className="text-primary fw-bold">
                 👋 {loggedInUser.FIRST_NAME}
               </span>
-            )}
+            )} */}
 
             <button
               className="navbar-toggler me-2"
@@ -217,10 +217,10 @@ const Header = () => {
                   Solutions
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="blogsDropdown">
-                  <li><a className="dropdown-item" href="#" onClick={closeMenus}>Data Quality</a></li>
-                  <li><a className="dropdown-item" href="#" onClick={closeMenus}>Data Migration</a></li>
+                  <li><Link className="dropdown-item" to="/data-quality" onClick={closeMenus}>Data Quality</Link></li>
+                  <li><Link className="dropdown-item" to="/data-migration" onClick={closeMenus}>Data Migration</Link></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><Link className="dropdown-item" to='/videoAnalaytics' onClick={closeMenus}>Video Analytics</Link></li>
+                  <li><Link className="dropdown-item" to='/video-analaytics' onClick={closeMenus}>Video Analytics</Link></li>
                 </ul>
               </li>
 
@@ -229,16 +229,16 @@ const Header = () => {
               </li>
 
               {/* Username for large devices */}
-              {loggedInUser && (
+              {/* {loggedInUser && (
                 <li className="nav-item d-none d-lg-flex align-items-center">
                   <span className="text-primary fw-bold px-2">
                     👋 {loggedInUser.FIRST_NAME}
                   </span>
                 </li>
-              )}
+              )} */}
 
               {/* Register/Login Buttons */}
-              {!loggedInUser && (
+              {/* {!loggedInUser && (
                 <>
                   <li>
                     <button className='register_button' onClick={RegisterClick}>Register Now</button>
@@ -247,23 +247,23 @@ const Header = () => {
                     <button className='register_button' onClick={toggleForm}>Login</button>
                   </li>
                 </>
-              )}
+              )} */}
 
             
 
               <li className="nav-item">
                 <button className='register_button' onClick={Contactus}>Contact Us</button>
               </li>
-                {loggedInUser && (
+                {/* {loggedInUser && (
                 <li>
                   <button className='register_button' onClick={handleLogout}>Logout</button>
                 </li>
-              )}
+              )} */}
             </ul>
 
             {/* Register and Login Forms */}
-            {isRegisterOpen && <RegisterForm closeForm={() => setIsRegisterOpen(false)} toggleForm={toggleLoginForm} />}
-            {isLoginOpen && <LoginForm closeForm={() => setIsLoginOpen(false)} toggleForm={toggleRegisterForm} />}
+            {/* {isRegisterOpen && <RegisterForm closeForm={() => setIsRegisterOpen(false)} toggleForm={toggleLoginForm} />}
+            {isLoginOpen && <LoginForm closeForm={() => setIsLoginOpen(false)} toggleForm={toggleRegisterForm} />} */}
           </div>
         </div>
       </nav>
