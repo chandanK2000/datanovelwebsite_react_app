@@ -1,0 +1,93 @@
+/* Container for the FAQ section */
+.digital-transformation-faq {
+    padding: 60px 20px;
+    background-color: #f4f6f9;
+    text-align: center;
+}
+
+/* Title for FAQ section */
+.faq-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Container for FAQ question and image */
+.faq-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensures responsive behavior */
+}
+
+/* FAQ question section */
+.faq-section {
+    flex: 1;
+    padding: 20px;
+    max-width: 60%; /* Limit the width */
+    box-sizing: border-box;
+}
+
+/* Question styling */
+.faq-question {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Answer styling */
+.faq-answer {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    text-align: left; /* Align the text to the left for better readability */
+}
+
+/* Image section */
+.faq-image {
+    flex: 1;
+    max-width: 35%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Ensure the image fits well */
+.faq-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .faq-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faq-section {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .faq-image {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Adjust font sizes for mobile */
+    .faq-title {
+        font-size: 28px;
+    }
+
+    .faq-question {
+        font-size: 22px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,95 @@
+.data-transfer-technique {
+    padding: 40px 20px;
+    background-color: #04275B;
+    margin: 0 auto;
+}
+
+.data-transfer-technique__title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #9CC59D;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.data-transfer-technique__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.data-transfer-technique__item {
+    flex: 1 1 15%;
+    /* 6 per row (approx 16.66%) */
+    max-width: 15%;
+    text-align: center;
+    background: #073567;
+    border-radius: 8px;
+    padding: 15px 10px;
+
+    cursor: pointer;
+}
+
+
+
+.data-transfer-technique__item img {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+
+.data-transfer-technique__caption {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    line-height: 15px;
+}
+
+/* Responsive adjustments */
+
+/* Tablets: 3 items per row */
+@media (max-width: 1024px) {
+    .data-transfer-technique__item {
+        flex: 1 1 30%;
+        max-width: 30%;
+
+    }
+}
+
+/* Small tablets / large phones: 2 items per row */
+@media (max-width: 768px) {
+    .data-transfer-technique__item {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+/* Mobile phones: 1 item per row */
+@media (max-width: 480px) {
+    .data-transfer-technique__item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        background-color: white;
+        color: black;
+        padding: 25px 10px 0px;
+
+    }
+
+    .data-transfer-technique__title {
+        font-size: 20px;
+    }
+
+    .data-transfer-technique__caption {
+        font-size: 16px;
+        color: black;
+    }
+}

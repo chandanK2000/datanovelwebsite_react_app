@@ -1,0 +1,105 @@
+.result-oriented-benefits {
+  padding: 60px 20px;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  background-image: url('https://media.istockphoto.com/id/481701668/vector/circuit-board-background-abstract-computers-technology.jpg?s=612x612&w=0&k=20&c=3hnHfGX8mKUPo32HEAwhGFqctervyJq85-kpopqIVUI=');
+}
+
+.result-oriented-benefits__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  background-color: #4CAF4F;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  padding: 6px 12px;
+}
+
+/* Grid container */
+.result-oriented-benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual benefit block */
+.result-oriented-benefits__item {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 250px;
+  max-width: 300px;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;  
+}
+
+.result-oriented-benefits__item:hover {
+  transform: translateY(-5px);
+}
+
+.result-oriented-benefits h3{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.result-oriented-benefits p{
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 400;
+}
+
+/* Simple background colors */
+.finance {
+background: linear-gradient(74.23deg, #55A761 2.16%, #AFDF7B 95.69%);
+}
+
+.ecommerce {
+background: linear-gradient(74.23deg, #902048 2.16%, #E16D97 95.69%);
+}
+
+.healthcare {
+background: linear-gradient(74.23deg, #1B3B8B 2.16%, #5674BF 95.69%);
+}
+
+.technology {
+background: linear-gradient(74.23deg, #863116 2.16%, #DC8468 95.69%);
+}
+
+/* Text styles */
+.result-oriented-benefits__item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.result-oriented-benefits__item p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .result-oriented-benefits__item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .result-oriented-benefits__item {
+    flex: 1 1 100%;
+  }
+
+  .result-oriented-benefits__title {
+    font-size: 24px;
+  }
+}

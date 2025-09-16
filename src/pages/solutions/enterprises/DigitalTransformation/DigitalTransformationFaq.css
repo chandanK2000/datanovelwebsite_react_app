@@ -1,0 +1,85 @@
+/* Styling for the FAQ Section */
+.digital-transformation-faq {
+  padding: 60px 20px;
+  background: radial-gradient(57.52% 57.52% at 34.47% 42.48%, #0F2734 0%, #051118 100%);
+}
+
+/* Title of the FAQ Section */
+.faq-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Accordion Styling */
+.accordion-item {
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Accordion button styling */
+.accordion-button {
+  font-weight: 600;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding-left: 30px;
+  box-shadow: none;
+}
+
+/* Accordion button focus removal */
+.accordion-button:focus,
+.accordion-button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Custom + / - sign */
+.accordion-button::before {
+  content: "+";
+  position: absolute;
+  left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+/* When expanded, show minus */
+.accordion-button:not(.collapsed)::before {
+  content: "-";
+}
+
+/* Accordion body styling */
+.accordion-body {
+  padding: 15px 20px;
+  font-weight: 400;
+  color: #555;
+  background-color: #fafafa;
+}
+
+/* Image Styling */
+.faq-image {
+  text-align: center;
+}
+
+.faq-image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 28px;
+  }
+  
+  .accordion-button {
+    font-size: 18px;
+  }
+
+  .accordion-body {
+    font-size: 14px;
+  }
+}
