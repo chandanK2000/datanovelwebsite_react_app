@@ -1,0 +1,201 @@
+.building-future {
+    margin: 0 auto;
+    padding: 10px 20px 100px;
+    text-align: center;
+    background: #f8f9fa;
+    position: relative;
+}
+
+.building-future h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #04275B;
+    margin: 20px 0px;
+}
+
+/* Slider container */
+.slick-slider {
+    padding: 0 20px;
+}
+
+/* Add horizontal gap between carousel cards */
+.slick-slide {
+    padding: 0 5px;
+    box-sizing: border-box; /* corrected from order-box */
+}
+
+/* Building Future Card styles */
+.building-future-card {
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Image container */
+.building-future-image-container {
+    position: relative;
+    width: 100%;
+    height: 165px;
+    overflow: hidden;
+    /* border-radius: 10px 10px 0 0; */
+}
+
+.building-future-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Text and button details */
+.building-future-details {
+    padding: 20px;
+}
+
+.building-future-details h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2C4928;
+}
+
+.building-future-details p {
+    font-size: 1rem;
+    color: #2C4928;
+    margin: 10px 0;
+}
+
+.learn-more-button-building {
+    background-color: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.learn-more-button-building:hover {
+    background-image: linear-gradient(45deg, #007BFF, #0056b3);
+}
+
+/* Custom Arrows Below the Slider */
+.building-future-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    margin-top: 40px;
+}
+
+/* Arrow button styles */
+.slick-prev,
+.slick-next {
+    background-color: #071524;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Hover effect for the arrows */
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: #090c0f;
+}
+
+/* Custom positioning for previous and next arrows */
+.slick-prev {
+    left: -30px;
+}
+
+.slick-next {
+    right: -40px;
+}
+
+/* Mobile & Tablet Responsiveness */
+
+/* Adjust header font size for smaller screens */
+@media (max-width: 768px) {
+    .building-future h2 {
+        font-size: 16px !important; /* Smaller heading on mobile */
+    }
+
+    .building-future-card {
+        flex-direction: column; /* Stack the card content vertically */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .building-future-image-container {
+        height: 140px; /* Adjust image height */
+    }
+
+    .learn-more-button-building {
+        padding: 6px 12px; /* Adjust button padding */
+    }
+
+    /* Adjust the carousel */
+    .slick-slide {
+        padding: 0 10px;
+    }
+
+    /* Arrows adjustments */
+    .building-future-arrows {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        font-size: 18px; /* Smaller arrows on mobile */
+        padding: 6px;
+    }
+}
+
+/* Tablet Landscape or small desktops */
+@media (max-width: 1024px) {
+    .building-future h2 {
+        font-size: 28px; /* Slightly smaller heading */
+    }
+
+    .slick-slider {
+        padding: 0 15px;
+    }
+
+    .building-future-card {
+        padding: 15px;
+    }
+
+    .building-future-image-container {
+        height: 150px; /* Smaller image height */
+    }
+
+    .learn-more-button-building {
+        padding: 8px 14px; /* Slightly smaller button */
+    }
+}
+
+/* Larger screens (Desktops) */
+@media (min-width: 1025px) {
+    .building-future-card {
+        padding: 20px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        font-size: 20px;
+        padding: 8px;
+    }
+}

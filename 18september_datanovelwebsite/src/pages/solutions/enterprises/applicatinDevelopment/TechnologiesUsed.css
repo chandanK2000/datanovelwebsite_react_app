@@ -1,0 +1,128 @@
+/* Main container */
+.technologies-used-container {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #F5F7FA;
+}
+
+/* Heading */
+.technologies-used-container span {
+  font-size: 30px;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  background-color: #4CAF4F;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.technologies-used-container h3 {
+  color: #f5a259 !important;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Grid layout */
+.technologies-used-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+/* Each card */
+.tech-card {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 280px;
+  max-width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.tech-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside card */
+.tech-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Label below image */
+.tech-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #04275B;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid #ccc;
+}
+
+/* ----------------------------
+   ✅ Responsive Breakpoints
+----------------------------- */
+
+/* Tablet & small laptops */
+@media (max-width: 992px) {
+  .technologies-used-container h3 {
+    font-size: 1.8rem;
+  }
+
+  .tech-card {
+    width: 45%;
+  }
+
+  .tech-card img {
+    height: 220px;
+  }
+}
+
+/* Mobile (phones) */
+@media (max-width: 768px) {
+  .technologies-used-container span {
+    font-size: 24px;
+  }
+
+  .technologies-used-container h3 {
+    font-size: 1.6rem;
+  }
+
+  .tech-card {
+    width: 100%;
+  }
+
+  .tech-card img {
+    height: 200px;
+  }
+
+  .tech-card p {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+/* Very small devices (iPhone SE, Galaxy Fold) */
+@media (max-width: 480px) {
+  .technologies-used-container h3 {
+    font-size: 1.4rem;
+  }
+
+  .tech-card img {
+    height: 180px;
+  }
+
+  .tech-card p {
+    font-size: 0.95rem;
+  }
+}

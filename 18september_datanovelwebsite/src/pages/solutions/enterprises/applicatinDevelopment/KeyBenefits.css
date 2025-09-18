@@ -1,0 +1,180 @@
+/* Container for the Key Benefits Section */
+.key-benefits-section {
+    padding: 40px 0;
+    background: linear-gradient(127.56deg, #218BCD 10.17%, #2B3C81 91.84%);
+}
+
+/* First part of the left section */
+.left-first-section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.left-first-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2C4928;
+    margin-bottom: 10px;
+}
+
+.left-first-section p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.left-first-section img {
+    width: 189px;
+    height: 189px;
+    border-radius: 8px;
+    margin: auto;
+    
+}
+
+/* Middle section (with 8 columns) */
+.middle-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    /* Align items in the center */
+    gap: 20px;
+}
+
+.middle-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #04275B;
+    margin-bottom: 15px;
+}
+
+.middle-item img {
+    width: 92px;
+    height: 92px;
+    border-radius: 8px;
+}
+
+/* Bottom section: two 6-column sections */
+.middle-section-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.middle-section-bottom-item1,
+.middle-section-bottom-item2 {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 48%;
+}
+
+.middle-section-bottom-item1 img,
+.middle-section-bottom-item2 img {
+    width: 92px;
+    height: 92px;
+    border-radius: 8px;
+}
+
+.middle-section-bottom-item1 p,
+.middle-section-bottom-item2 p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Right section */
+.right {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.right h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+
+    /* Adjust middle section for small devices */
+    .middle-section-bottom {
+        flex-direction: column;
+        margin: 10px 0px;
+    }
+
+    .middle-section-bottom-item1,
+    .middle-section-bottom-item2 {
+        margin-bottom: 20px;
+        flex: 1 1 100%;
+        /* Stack them in full width */
+    }
+}
+
+@media (max-width: 768px) {
+    .left-first-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .left-first-section p {
+        font-size: 0.875rem;
+    }
+
+    .middle-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .middle-section-bottom-item1 img,
+    .middle-section-bottom-item2 img {
+        max-width: 100%;
+    }
+
+    /* Hide right section on smaller screens and move it to the top */
+    .right {
+        order: -1;
+        /* Move Key Benefits section to top */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .right h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Hide right section entirely if needed */
+    .right-section {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For very small screens, ensure readability */
+    .left-first-section img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .middle-item img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .middle-section-bottom-item1 img,
+    .middle-section-bottom-item2 img {
+        width: 70px;
+        height: 70px;
+    }
+}

@@ -1,0 +1,170 @@
+/* Overlay Styling */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 9999;
+    padding: 10vh;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease, opacity 0.5s ease;
+}
+
+/* Popup Form Styling */
+.login-popup {
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    margin-top: 10vh;
+    padding: 15px;
+    flex-direction: column;
+    transform: translateY(-50px);
+    transition: transform 0.15s ease;
+}
+
+/* Title Styling */
+.login-popup-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Close Button Styling */
+.login-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.login-close-button:hover {
+    color: red;
+}
+
+/* Form Fields Styling */
+.login-form .form-group {
+    margin-bottom: 8px;
+}
+
+.login-submit-button {
+    padding: 12px 22px;
+    font-size: 1.1rem;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(135deg, #d6cc3b, #020e1a);
+    color: white;
+    border-radius: 50px !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+}
+
+.login-submit-button:hover {
+    background: linear-gradient(135deg, #d6cc3b, #3895f1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button Styling */
+.login-submit-group {
+    margin-top: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    /* For tablets and smaller screens */
+    .login-popup {
+        margin-top: 10vh;
+        padding: 20px;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .login-popup-title {
+        font-size: 1.3rem;
+    }
+
+    .login-submit-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .login-close-button {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-overlay {
+        padding: 2vh;
+    }
+
+    /* For mobile devices */
+    .login-popup {
+        margin-top: 20vh;
+        padding: 10px;
+        width: 100%;
+        max-width: 450px !important;
+    }
+
+    .login-popup-title {
+        font-size: 1.2rem;
+    }
+
+    .login-submit-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .login-close-button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* For smaller mobile devices */
+    .login-popup {
+        width: 100%;
+        max-width: 450px;
+        margin-top: 25vh;
+        padding: 8px;
+    }
+
+    .login-popup-title {
+        font-size: 1rem;
+    }
+
+    .login-submit-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .login-close-button {
+        font-size: 1.1rem;
+    }
+}

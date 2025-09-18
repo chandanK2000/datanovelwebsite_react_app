@@ -1,0 +1,130 @@
+.cloudAdvisory-solution-section {
+    padding: 20px 20px;
+    background: #F5F7FA;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.cloudAdvisory-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4CAF4F;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    position: relative;
+    display: inline-block;
+}
+
+.cloudAdvisory-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3BA0FF 0%, #3206B7 100%);
+    border-radius: 2px;
+}
+
+
+.cloudAdvisory-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left column text */
+.cloudAdvisory-col.text-content {
+    flex: 1 1 50%;
+}
+
+.cloudAdvisory-col.text-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #04275B;
+    margin-bottom: 15px;
+    font-weight: 500;
+    padding: 20px 30px;
+    text-align: justify;
+}
+
+/* Right column image */
+.cloudAdvisory-col.image-content {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.cloudAdvisory-img {
+    max-width: 100%;
+    height: auto;
+    /* border-radius: 4px; */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border: 1px solid #04275B;
+    padding: 6px;
+}
+
+/* ✅ Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .cloudAdvisory-title {
+        font-size: 28px;
+    }
+
+    .cloudAdvisory-col.text-content p {
+        font-size: 15px;
+    }
+}
+
+/* Mobile (iPhone 16, etc.) */
+@media (max-width: 768px) {
+    .cloudAdvisory-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cloudAdvisory-col.text-content {
+        flex: 1 1 100%;
+    }
+
+    .cloudAdvisory-col.image-content {
+        flex: 1 1 100%;
+        margin-top: 20px;
+    }
+
+    .cloudAdvisory-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .cloudAdvisory-col.text-content p {
+        font-size: 14px;
+    }
+
+    .cloudAdvisory-img {
+        max-width: 90%;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .cloudAdvisory-solution-section {
+        padding: 40px 15px;
+    }
+
+    .cloudAdvisory-title {
+        font-size: 20px;
+    }
+
+    .cloudAdvisory-col.text-content p {
+        font-size: 13px;
+    }
+
+    .cloudAdvisory-img {
+        max-width: 100%;
+    }
+}

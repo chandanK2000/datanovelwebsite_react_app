@@ -1,0 +1,144 @@
+/* Container */
+.weoffers-container {
+    padding: 20px 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #F5F7FA;
+}
+
+/* Heading */
+.weoffers-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #3A3B7B;
+    font-weight: 600;
+}
+
+/* Grid Layout */
+.weoffers-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    justify-items: center;
+}
+
+/* Each Item Card */
+.weoffers-item {
+    background: #04275B;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.weoffers-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+}
+
+/* Image */
+.weoffers-item img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Title */
+.weoffers-item h3 {
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Description */
+.weoffers-item p {
+    font-size: 1rem;
+    color: #EFEFEF;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Responsive Breakpoints */
+
+/* Medium devices - tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .weoffers-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .weoffers-item {
+        max-width: 100%;
+    }
+}
+
+/* Small devices - phones and small tablets */
+@media (max-width: 600px) {
+    .weoffers-container {
+        padding: 30px 15px;
+    }
+
+    .weoffers-container h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .weoffers-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .weoffers-item {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .weoffers-item img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+
+    .weoffers-item h3 {
+        font-size: 1.15rem;
+    }
+
+    .weoffers-item p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small devices - very small phones (e.g., iPhone SE) */
+@media (max-width: 375px) {
+    .weoffers-container {
+        padding: 20px 10px;
+    }
+
+    .weoffers-container h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .weoffers-item img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 12px;
+    }
+
+    .weoffers-item h3 {
+        font-size: 1rem;
+    }
+
+    .weoffers-item p {
+        font-size: 0.9rem;
+    }
+}

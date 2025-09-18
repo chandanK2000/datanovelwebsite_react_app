@@ -1,0 +1,92 @@
+.business-importance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    position: relative;
+    background-image: url('../../../../assets/images/wavevector.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.business-importance__img {
+    position: relative;
+    flex: 1;
+    max-width: 50%;
+}
+
+.business-importance__img img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.business-importance__content {
+    flex: 1;
+    padding: 0 20px;
+    max-width: 50%;
+}
+
+.business-importance__content h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.business-importance__content p {
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+/* Second image overlapping and slightly shifted */
+.business-importance__img::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: 50px;
+    width: 50%; /* Adjust the width */
+    height: 50%; /* Set height to ensure it's visible */
+    background-image: url('../../../../assets/images/businessimages2.png'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Ensure it's in front of the first image */
+}
+
+/* Responsive Styles for devices below 768px */
+@media (max-width: 768px) {
+    .business-importance {
+        flex-direction: column;
+        padding: 40px 20px; /* Adjust padding for smaller devices */
+      
+    }
+
+    .business-importance__img {
+        max-width: 100%;
+        margin-bottom: 20px; /* Add margin if needed */
+    }
+
+    .business-importance__content {
+        max-width: 100%;
+    }
+
+    .business-importance__content h2 {
+        font-size: 28px; /* Adjust the font size for smaller devices */
+    }
+
+    .business-importance__content p {
+        font-size: 14px; /* Adjust paragraph font size */
+    }
+
+    /* Hide the second image on smaller devices */
+    .business-importance__img::after {
+        display: none; /* Hides the second image */
+    }
+}

@@ -1,0 +1,124 @@
+.cloudservice-banner-section {
+  position: relative;
+  min-height: 70vh; 
+  width: 100%;
+  background-image: url('../../../../assets/images/cloud/cloudImage.png');
+  background-size: cover; 
+  background-position: top center; 
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 20px;
+}
+
+/* Overlay box for content */
+.cloudservice-banner-overlay {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px 15px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cloudservice-banner-overlay h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #04275b;
+  margin-bottom: 10px;
+}
+
+.cloudservice-banner-overlay h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #04275b;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.cloudservices-learn-more {
+  background-color: #4caf4f;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.cloudservices-learn-more:hover {
+  background: linear-gradient(90deg, #e20d9b 0%, #ffb43b 100%);
+}
+
+/* Responsive Design */
+
+/* Medium Screens / Laptops */
+@media (max-width: 1024px) {
+  .cloudservice-banner-section {
+    padding: 80px 20px 20px;
+  }
+  .cloudservice-banner-overlay {
+    padding: 18px 15px;
+    max-width: 550px;
+  }
+  .cloudservice-banner-overlay h1 {
+    font-size: 24px;
+  }
+  .cloudservice-banner-overlay h2 {
+    font-size: 18px;
+  }
+  .cloudservices-learn-more {
+    padding: 7px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .cloudservice-banner-section {
+    min-height: 60vh;
+    padding: 60px 15px 15px;
+  }
+  .cloudservice-banner-overlay {
+    padding: 15px 12px;
+    max-width: 500px;
+  }
+  .cloudservice-banner-overlay h1 {
+    font-size: 22px;
+  }
+  .cloudservice-banner-overlay h2 {
+    font-size: 16px;
+  }
+  .cloudservices-learn-more {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Devices / iPhone 16 and smaller */
+@media (max-width: 480px) {
+  .cloudservice-banner-section {
+    min-height: 45vh;
+    padding: 20px 10px 0px;
+    background-position: center top;
+  }
+  .cloudservice-banner-overlay {
+    padding: 12px 10px;
+    max-width: 90%;
+  }
+  .cloudservice-banner-overlay h1 {
+    font-size: 20px;
+  }
+  .cloudservice-banner-overlay h2 {
+    font-size: 14px;
+  }
+  .cloudservices-learn-more {
+    padding: 6px 16px;
+    font-size: 13px;
+    width: 50%;
+  }
+}

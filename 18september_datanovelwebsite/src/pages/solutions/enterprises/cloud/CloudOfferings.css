@@ -1,0 +1,142 @@
+.cloud-offerings-section {
+  background: #8DC63F;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cloud-offerings-section h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  position: relative;
+  display: inline-block;
+}
+
+.cloud-offerings-section h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3BA0FF 0%, #3206B7 100%);
+  border-radius: 2px;
+}
+
+.cloud-offerings-section .subtitle {
+  color: #FFFFFF;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* Card Base */
+.offering-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 16px !important;
+  height: 100%;
+  min-height: 180px;
+  box-shadow: 0 4px 16px rgba(12, 12, 12, 0.1),
+              0 6px 20px rgba(201, 138, 138, 0.01);
+}
+
+.offering-card .arrowicon{
+    text-align: left;
+ 
+    margin-top: 30px;
+
+}
+
+/* Different background colors */
+.card-bg-1 { background: #EAFFF5; } 
+.card-bg-2 { background: #F5F7FA; }
+.card-bg-3 { background: #E7FFBC; }
+.card-bg-4 { background: #E2F4FF; }  
+.card-bg-5 { background: #FFEECF; } 
+.card-bg-6 { background: #E8E2FF; } 
+
+.offering-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: #ff9800;
+  opacity: 0.95;
+}
+
+.offering-card h4 {
+  color: #04275B;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.offering-card p {
+  color: #4D4D4D;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cloud-offerings-section h2 {
+    font-size: 26px;
+  }
+  .cloud-offerings-section .subtitle {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  .offering-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cloud-offerings-section {
+    padding: 50px 15px;
+  }
+  .cloud-offerings-section h2 {
+    font-size: 24px;
+  }
+  .offering-card h4 {
+    font-size: 16px;
+  }
+  .offering-card p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 576px) {
+  .cloud-offerings-section {
+    padding: 40px 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../../../assets/images/cloud/cloudimagebackground1.jpg');
+  }
+  .cloud-offerings-section h2 {
+    font-size: 22px;
+  }
+  .cloud-offerings-section .subtitle {
+    font-size: 14px;
+  }
+  .offering-card {
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .offering-card h4 {
+    font-size: 15px;
+  }
+  .offering-card p {
+    font-size: 13px;
+  }
+}

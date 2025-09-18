@@ -1,0 +1,165 @@
+.cloud-benefits-container {
+  padding: 40px 20px;
+  background-color: #04275B;
+}
+
+.cloud-benefits-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  position: relative;
+  text-align: center !important;
+}
+
+.cloud-benefits-title::after {
+  content: '';
+  display: block;
+  width: 110px;
+  height: 3px;
+  background: linear-gradient(90deg, #FFB43B 0%, #E20D9B 100%);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cloud-benefits-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.cloud-benefit-item {
+  flex: 1 1 calc(25% - 20px);
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #4D4D4D;
+  background-color: #FFFFFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; 
+}
+
+.cloud-benefit-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(77, 77, 77, 0.05),
+    rgba(77, 77, 77, 0.15),
+    rgba(77, 77, 77, 0.05)
+  );
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.cloud-benefit-item:hover::before {
+  left: 100%;
+}
+
+.cloud-benefit-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cloud-benefit-item * {
+  position: relative;
+  z-index: 1; 
+}
+
+.cloud-benefit-item img {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  margin: left;
+}
+
+.cloud-benefit-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #04275B;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.cloud-benefit-item p {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  color: #4D4D4D;
+  font-weight: 500;
+}
+
+
+/* 🖥️ Medium devices (Tablets & small laptops: up to 1024px) */
+@media (max-width: 1024px) {
+  .cloud-benefit-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .cloud-benefits-content {
+    /* gap: 0px; */
+  }
+}
+
+/* 📱 Small devices (Large phones & small tablets: up to 768px) */
+@media (max-width: 768px) {
+  .cloud-benefit-item {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .cloud-benefits-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+  }
+
+  .cloud-benefit-item h3 {
+    font-size: 16px;
+  }
+
+  .cloud-benefit-item p {
+    font-size: 13px;
+  }
+}
+
+/* 📱 Extra small devices (iPhone 16, SE, etc. up to 480px) */
+@media (max-width: 480px) {
+  .cloud-benefits-container {
+    padding: 20px 10px;
+  }
+
+  .cloud-benefit-item {
+    padding: 15px;
+  }
+
+  .cloud-benefit-item img {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .cloud-benefits-title {
+    font-size: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}

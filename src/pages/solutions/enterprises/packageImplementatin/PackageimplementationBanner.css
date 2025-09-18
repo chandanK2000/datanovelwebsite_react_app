@@ -1,0 +1,98 @@
+.package-banner {
+    background: url('https://png.pngtree.com/background/20220718/original/pngtree-orange-gradient-background-material-picture-image_1656083.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+.package-banner-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.package-banner h1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 20px 0;
+    position: relative;
+    color: #04275B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* The white rectangular boxes before and after the heading */
+.inline-rect {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border-radius: 2px;
+    /* flex-shrink: 0; */
+}
+
+/* Button style */
+.learn-more-button-package {
+    background-color: #04275B;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.learn-more-button-package:hover {
+    /* background-color: #04275B; */
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .package-banner h1 {
+        font-size: 2rem;
+        gap: 8px;
+    }
+
+    .inline-rect {
+        width: 80px;
+        height: 15px;
+    }
+
+    .learn-more-button-package {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inline-rect {
+        display: none;
+    }
+
+    .package-banner {
+        padding: 80px 15px 30px;
+    }
+
+    .package-banner h1 {
+        font-size: 1.5rem;
+        gap: 6px;
+    }
+
+    .inline-rect {
+        width: 60px;
+        height: 12px;
+    }
+}
