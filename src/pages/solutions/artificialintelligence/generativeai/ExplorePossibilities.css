@@ -1,0 +1,93 @@
+.explore-possibilities-section {
+    position: relative;
+    min-height: 20vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 60px;
+    color: #fff;
+    flex-wrap: wrap;
+    background-color: #04275B;
+}
+
+/* Heading */
+.explore-possibilities-section h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 20px 0px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Button */
+.explore-possibility-button {
+    background: linear-gradient(90deg, #3BA0FF 0%, #3206B7 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.explore-possibility-button:hover {
+    background: linear-gradient(90deg, #2e7d32 0%, #4caf4f 100%);
+    transform: scale(1.02);
+}
+
+/* 🔹 Responsive Design */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .explore-possibilities-section {
+        flex-direction: column;
+        /* stack heading + button */
+        justify-content: center;
+        padding: 30px 15px;
+        min-height: 25vh;
+    }
+
+    .explore-possibilities-section h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .explore-possibility-button {
+        font-size: 15px;
+        padding: 12px 24px;
+    }
+}
+
+/* Mobile (iPhone 16 & smaller ~480px) */
+@media (max-width: 480px) {
+    .explore-possibilities-section {
+        flex-direction: column;
+        padding: 20px 0px 40px;
+        min-height: 20vh;
+    }
+
+    .explore-possibilities-section h2 {
+        font-size: 14px;
+
+    }
+
+    .explore-possibilities-section h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .explore-possibility-button {
+        font-size: 14px;
+        padding: 10px;
+        width: 50%;
+        max-width: 280px;
+    }
+}

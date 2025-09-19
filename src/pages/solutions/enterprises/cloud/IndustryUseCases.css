@@ -1,6 +1,8 @@
+/* ==================== Industry Use Cases Section ==================== */
 .industry-usecases-section {
   background-color: #F5F7FA;
   text-align: center;
+  padding: 60px 20px; /* Added vertical padding */
 }
 
 .industry-usecases-section h2 {
@@ -9,57 +11,128 @@
   color: #04275B;
   position: relative;
   display: inline-block;
-  margin-bottom: 30px; 
+  margin-bottom: 20px;
 }
 
 .industry-usecases-section h2::after {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -10px; 
+  bottom: -10px;
   transform: translateX(-50%);
-  width: 100px; 
+  width: 100px;
   height: 4px;
   background: linear-gradient(90deg, #FFB43B 0%, #E20D9B 100%);
   border-radius: 2px;
 }
 
-
-.headingparagraph{
-   font-size: 18px;
-  color: #04275B;  
+.headingparagraph {
+  font-size: 18px;
+  color: #04275B;
   font-weight: 500;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .industry-usecases-section p {
   font-size: 16px;
   color: #4D4D4D;
+  margin-bottom: 30px;
 }
 
 .card-title {
   font-weight: 600;
   color: #04275b;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .card-text {
   font-size: 14px;
   color: #4d4d4d;
+  line-height: 1.6;
 }
 
+/* ==================== Responsive Styling ==================== */
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
+  .industry-usecases-section {
+    padding: 50px 15px;
+  }
+
+  .industry-usecases-section h2 {
+    font-size: 28px;
+  }
+
+  .industry-usecases-section p,
+  .headingparagraph {
+    font-size: 16px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile / iPhone 16 (approx. 430-460px and below) */
+@media (max-width: 480px) {
+  .industry-usecases-section {
+    padding: 40px 10px;
+  }
+
   .industry-usecases-section h2 {
     font-size: 24px;
   }
+
+  .industry-usecases-section h2::after {
+    width: 70px; 
+    height: 3px;
+  }
+
+  .headingparagraph {
+    font-size: 15px;
+  }
+
   .industry-usecases-section p {
     font-size: 14px;
   }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 13px;
+  }
 }
 
-@media (max-width: 576px) {
+/* Extra small devices (<360px) */
+@media (max-width: 360px) {
+  .industry-usecases-section {
+    padding: 30px 10px;
+  }
+
   .industry-usecases-section h2 {
     font-size: 22px;
   }
-  .industry-usecases-section p {
+
+  .headingparagraph {
+    font-size: 14px;
+  }
+
+  .industry-usecases-section p,
+  .card-text {
+    font-size: 12px;
+  }
+
+  .card-title {
     font-size: 13px;
   }
 }

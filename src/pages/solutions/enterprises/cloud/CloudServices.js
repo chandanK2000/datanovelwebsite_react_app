@@ -7,6 +7,12 @@ import CloudPartners from './CloudPartners';
 import CloudBusinessBenefits from './CloudBusinessBenefits';
 import CloudTypes from './CloudTypes';
 import IndustryUseCases from './IndustryUseCases';
+import Quickassessment from './Quickassessment';
+import CloudTechnology from './CloudTechnology';
+import DamcoDifferentiators from './DamcoDifferentiators';
+import LatestBlogs from '../../../home/latestBlogs/LatestBlogs';
+import DigitalTransformationFaq from '../DigitalTransformation/DigitatTransformationFaq';
+import CloudFaqs from './CloudFaqs';
 
 const CloudServices = () => {
   return (
@@ -19,6 +25,11 @@ const CloudServices = () => {
       <CloudBusinessBenefits/>
       <CloudTypes/>
       <IndustryUseCases/>
+      <Quickassessment/>
+      <CloudTechnology/>
+      <DamcoDifferentiators/>
+      <LatestBlogs/>
+      <CloudFaqs/>
     </div>
   )
 }

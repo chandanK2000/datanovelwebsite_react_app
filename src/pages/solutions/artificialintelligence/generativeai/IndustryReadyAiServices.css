@@ -1,0 +1,119 @@
+/* Section background */
+.industry-ready-ai-services {
+  background: #f9fafb;
+  padding: 100px 20px;
+  background-image: url('https://storage.pixteller.com/designs/designs-images/2019-03-27/05/simple-background-backgrounds-passion-simple-1-5c9b95d2b9dfb.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed !important;
+}
+
+/* Heading */
+.industry-ready-ai-services h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #04275B;
+}
+.industry-ready-ai-services h2 span {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #E35B13 0%, #B50088 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  
+}
+
+.industry-ready-ai-services p {
+  font-size: 22px;
+  color: #04275B;
+}
+
+/* Accordion Wrapper */
+.custom-accordion {
+  padding: 0;
+  margin: 0;
+}
+
+/* FAQ Item */
+.accordion-items {
+  border: none;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: green;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Question Button */
+.accordion-buttons {
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: green;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+  position: relative; /* needed for ::after */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Custom caret (+ / -) */
+.accordion-buttons::after {
+  content: "+"; 
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease, content 0.2s ease;
+}
+
+/* When expanded, show – */
+.accordion-buttons:not(.collapsed)::after {
+  content: "–";
+}
+
+/* Answer Body */
+.accordion-bodys {
+  background: #04275B;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.6;
+  padding: 15px 0px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Image styling */
+.img-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive - hide image on small devices */
+@media (max-width: 767px) {
+  .img-column {
+    display: none;
+  }
+
+  .industry-ready-ai-services {
+    padding: 60px 15px; /* Reduce padding for small devices */
+    background-attachment: scroll; /* Avoid fixed BG on mobiles for performance */
+  }
+
+  .industry-ready-ai-services h2 {
+    font-size: 20px;
+  }
+  .industry-ready-ai-services h2 span {
+    font-size: 20px;
+  }
+  .industry-ready-ai-services p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,207 @@
+.choose-generativeai-section {
+    padding: 50px 20px;
+    background: #4CAF4F;
+    background-image: url('../../../../assets/images/generativeAi/generativeChooseimage3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.choose-generativeai-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.choose-generativeai-section h3 {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #EDFDB9 0%, #FFD4A2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+}
+
+
+.choose-generativeai-section p {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0px auto 80px auto;
+    font-weight: 500;
+}
+
+/* Content container */
+.choose-generativeai-contents {
+    display: flex;
+    align-items: flex-start;
+    /* justify-content:space-around !important; */
+    gap: 0px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* Points list */
+.ai-points {
+    flex: 1 1 60%;
+    padding: 20px 10px 0px 120px;
+    background-color: #04275B;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image overlapping the points box */
+.ai-image {
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    z-index: 2;
+    width: 200px;
+    height: auto;
+}
+
+.ai-points ul {
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.ai-points li {
+    margin-bottom: -66px;
+}
+
+.ai-points h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+.ai-points p {
+    font-size: 14px;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Image styling */
+.choose-generativeai-contents .ai-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ai-image img {
+    max-width: 460px;
+    width: 100%;
+    object-fit: contain;
+    margin-left: 50px;
+}
+
+/* Second image using ::after */
+.choose-generativeai-contents .ai-image::after {
+    content: '';
+    position: absolute;
+    bottom: -170px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 370px;
+    background-image: url('../../../../assets/images/generativeAi/generativeaiChooseimage2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+}
+
+
+/* Responsive: Tablets */
+@media (max-width: 992px) {
+    .choose-generativeai-contents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ai-points {
+        padding: 20px 30px;
+        width: 100%;
+    }
+
+    .ai-image {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .choose-generativeai-contents .ai-image::after {
+        display: none;
+    }
+}
+
+/* Responsive: Mobile / iPhone 16 and smaller */
+@media (max-width: 480px) {
+    .choose-generativeai-section {
+        padding: 30px 15px;
+    }
+
+    .choose-generativeai-section h2 {
+        font-size: 18px;
+    }
+
+    .choose-generativeai-section h3 {
+        font-size: 20px;
+    }
+
+    .choose-generativeai-section p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .choose-generativeai-contents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ai-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px auto;
+        /* position: relative; */
+    }
+
+    .ai-image img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .choose-generativeai-contents .ai-image::after {
+        display: none;
+    }
+
+    .ai-points {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .ai-points h4 {
+        font-size: 16px;
+        color: orange;
+    }
+
+    .ai-points p {
+        font-size: 14px;
+    }
+
+    .ai-points li {
+        margin-bottom: 15px;
+    }
+}

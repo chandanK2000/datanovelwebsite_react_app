@@ -1,0 +1,220 @@
+/* ===========================
+   Industry AI Solutions
+=========================== */
+.industry-ai-solutions-section {
+    padding: 40px 20px 10px;
+    background: #F5F7FA;
+}
+
+.industry-ai-solutions-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #04275B;
+    margin-bottom: 10px;
+}
+
+.industry-ai-solutions-section h2 span {
+    font-size: 30px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #E35B13 0%, #B50088 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.industry-ai-solutions-section p {
+    font-size: 20px;
+    color: #04275B;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+/* Rows */
+.solutions-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.solution-item {
+    flex: 1 1 30%;
+    max-width: 30%;
+    text-align: center;
+    position: relative;
+    /* For sub-line positioning */
+}
+
+.solution-item img {
+    width: 105px;
+    height: 93px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.solution-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.solution-item p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Main horizontal line (between rows) */
+.main-hr {
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(90deg, #E35B13 0%, #B50088 100%);
+    margin: -20px auto 40px auto;
+    position: relative;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* Sub-lines connecting items to main line with circle at intersection */
+.first-row .solution-item::after,
+.second-row .solution-item::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: #4CAF4F;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.first-row .solution-item::before,
+.second-row .solution-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* First row: vertical line from bottom to main line */
+.first-row .solution-item::after {
+    top: 100%;
+    height: 35px;
+}
+
+.first-row .solution-item::before {
+    top: calc(100% + 35px - 6px);
+}
+
+/* Second row: vertical line from main line to top of item */
+.second-row .solution-item::after {
+    bottom: 100%;
+    height: 35px;
+}
+
+.second-row .solution-item::before {
+    bottom: calc(100% + 35px - 6px);
+}
+
+/* Circle colors per item (optional) */
+.first-row .solution-item:nth-child(1)::before {
+    border: 2px solid #E35B13;
+    background: #FFF;
+}
+
+.first-row .solution-item:nth-child(2)::before {
+    border: 2px solid #B50088;
+    background: #FFF;
+}
+
+.first-row .solution-item:nth-child(3)::before {
+    border: 2px solid #4CAF4F;
+    background: #FFF;
+}
+
+.second-row .solution-item:nth-child(1)::before {
+    border: 2px solid #FF9800;
+    background: #FFF;
+}
+
+.second-row .solution-item:nth-child(2)::before {
+    border: 2px solid #3F51B5;
+    background: #FFF;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+    .solution-item {
+        max-width: 45%;
+        margin-bottom: 40px;
+    }
+}
+
+/* Mobile / iPhone 16 & smaller (~480px) */
+@media (max-width: 480px) {
+    .solutions-row {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .solution-item {
+        max-width: 100%;
+        margin-bottom: 10px;
+        text-align: left;
+        border: 1px solid #0e69f3;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+
+     .solution-item img {
+        display: block;
+        margin: 0 auto; 
+    }
+
+    .solution-item h3 {
+        font-size: 20px  !important;
+        margin: 20px 0px;
+        text-align: center;
+    }
+
+    /* Hide main line and sub-lines + circles */
+    .main-hr,
+    .solution-item::after,
+    .solution-item::before {
+        display: none;
+    }
+
+    .industry-ai-solutions-section h2 {
+        font-size: 20px;
+    }
+
+    .industry-ai-solutions-section h2 span {
+        font-size: 20px;
+    }
+
+
+    .industry-ai-solutions-section p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .solution-item h3 {
+        font-size: 16px;
+    }
+
+    .solution-item p {
+        font-size: 13px;
+    }
+}

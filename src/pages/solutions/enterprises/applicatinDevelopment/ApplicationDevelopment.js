@@ -5,7 +5,7 @@ import KeyBenefits from './KeyBenefits';
 import ApplicationProcess from './ApplicationProcess';
 import TechnologiesUsed from './TechnologiesUsed';
 import LatestBlogs from '../../../home/latestBlogs/LatestBlogs';
-import DigitalTransformationFaq from '../DigitalTransformation/DigitatTransformationFaq';
+import ApplicationDevelopmentFaq from './ApplicationDevelopmentFaq';
 
 const ApplicationDevelopment = () => {
   return (
@@ -16,7 +16,7 @@ const ApplicationDevelopment = () => {
         <ApplicationProcess/>
         <TechnologiesUsed/>
         <LatestBlogs/>
-        <DigitalTransformationFaq/>
+        <ApplicationDevelopmentFaq/>
     </div>
   )
 }

@@ -7,7 +7,7 @@ import IndustrisServe from './IndustrisServe';
 import WhychoosePackage from './WhychoosePackage';
 import PackageImplementConnect from './PackageImplementConnect';
 import LatestBlogs from '../../../home/latestBlogs/LatestBlogs';
-import DigitalTransformationFaq from '../DigitalTransformation/DigitatTransformationFaq';
+import PackageImplementationFaq from './PackageImplementationFaq';
 
 const PackageImplementation = () => {
   return (
@@ -20,7 +20,7 @@ const PackageImplementation = () => {
       <WhychoosePackage/>
       <PackageImplementConnect/>
       <LatestBlogs/>
-      <DigitalTransformationFaq/>
+      <PackageImplementationFaq/>
     </div>
   )
 }
